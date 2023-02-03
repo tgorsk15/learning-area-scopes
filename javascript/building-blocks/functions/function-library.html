@@ -20,6 +20,40 @@
     const input = document.querySelector('.numberInput');
     const para = document.querySelector('p');
 
+    function squared(num) {
+      return num * num;
+    }
+
+    function cubed(num) {
+      return num * num * num;
+    }
+    
+    function factorial(num) {
+      if (num < 0) return undefined;
+      if (num === 0) return 1;
+      let x = num - 1;
+      while (x > 1) {
+        num *= x;
+        x--;
+      }
+      return num;
+    }
+
+    input.addEventListener("change", () => {
+      const num = parseFloat(input.value);
+      if (isNaN(num)) {
+        para.textContent = "You need to enter a number!";
+      } else{
+        para.textContent = `${num} squared is ${squared(num)}. `;
+      }
+    });
+
+    // Below is practice from TOP lesson 'Fundamentals part 3'
+    function favoriteAnimal(gay) {
+      return `A ${gay} is my fav animal!`
+    }
+    console.log(favoriteAnimal('frog'))
+
   </script>
 </body>
 </html>
